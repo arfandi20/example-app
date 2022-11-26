@@ -17,9 +17,8 @@ class ArtikelController extends Controller
      */
     public function index()
     {
-        // $data = artikel::all();
-        $data = DB:: select ('SELECT artikel.id, artikel.judul, artikel.foto, artikel.isi, artikel.kategori_id, artikel.tanggal_artikel, artikel.created_at, artikel.updated_at, artikel.penulis, kategori.nama FROM artikel JOIN kategori ON artikel.kategori_id=kategori.id');
-        return view ('artikel.tampil', compact('data'));
+        $data = artikel::all();
+        // $data = DB:: select ('SELECT artikel.id, artikel.judul, artikel.foto, artikel.isi, artikel.kategori_id, artikel.tanggal_artikel, artikel.created_at, artikel.updated_at, artikel.penulis, kategori.nama FROM artikel JOIN kategori ON artikel.kategori_id=kategori.id');
         return view ('artikel.tampil', compact('data'));
     }
 

@@ -2,7 +2,6 @@
 @extends('layouts.app')
 
 @section('content')
-@if (Auth::user()->role == 'admin')
 <div class="container">
     <h1> Tambah Data </h1>
     
@@ -27,8 +26,5 @@
             <button type="submit" class="btn btn-primary btn-sm mt-2">Submit</button>
     </form>
 </div>
-@endif
-@if (Auth::user()->role == 'editor')
-<h1>Hanya Dapat Di akses Oleh Admin</h1>
-@endif
+
 @endsection

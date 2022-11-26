@@ -8,11 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class artikel extends Model
 {
     use HasFactory;
-    use HasFactory;
+
     protected $table = 'artikel';
     protected $guarded = ['id'];
 
-    public function kategori (){
-        return $this ->hasMany(kategori::class);
+    public function kategori()
+    {
+        return $this-> belongsTo (kategori::class);
     }
 }

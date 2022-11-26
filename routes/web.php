@@ -27,10 +27,14 @@ Route::middleware(['auth'])->group(function(){
     Route::resource('/artikel', ArtikelController::class);
     Route::get('deleteartikel/{id}', [ArtikelController::class, 'destroy'])->name('deleteartikel');
     
+    // Route::resource('/user', UserController::class);
+    // Route::get('deleteuser/{id}', [UserController::class, 'destroy'])->name('deleteuser');
+});
+
+Route::middleware(['auth', 'admin'])->group(function(){
     Route::resource('/user', UserController::class);
     Route::get('deleteuser/{id}', [UserController::class, 'destroy'])->name('deleteuser');
 });
-
 
 
 Auth::routes();

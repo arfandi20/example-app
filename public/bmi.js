@@ -1,5 +1,3 @@
-
-
 class ulangtahun {
     constructor( year) {
       this.year = year;
@@ -7,45 +5,33 @@ class ulangtahun {
 
     age() {
       let date = new Date();
-      return date.getFullYear() - this.year;
+      let umur = date.getFullYear() - this.year;
+      return umur;
     }
   }
 
-  class bmi {
-    constructor( tinggi, berat) {
-      this.tinggi = tinggi;
-      this.berat = berat;
-    }
-
-    hasilbmi() {
-      return (this.berat)/(this.tinggi)*(this.tinggi);
-    }
-  }
-
-  class check extends ulangtahun {
-    constructor(year,) {
-      super(year);
-    }
-    konsul() {
-     if(this.age >= 17 && this.hasilbmi > 30 ){
-         return "Anda bisa mendapatkan Konsultasi Gratis"
-     } else {
-        return "Anda Tidak Dapat Konsultasi Gratis" 
+class check extends ulangtahun {
+  constructor(year,status) {
+    super(year);
+    this.status=status
+   }
+   konsul() {
+    if( umur >= 17 && this.status > 30 ){
+       return "Anda bisa mendapatkan Konsultasi Gratis"
+    } else {
+       return "Anda Tidak Dapat Konsultasi Gratis" 
     }
   }
 }
 
 function hasil (){
-    //konsultas
-    let bmicek = new bmi (document.getElementById("tinggi").value/100, document.getElementById("berat").value );
-    let hasilcheck = new check(document.getElementById("lahir").value);
-    document.getElementById("konsultasi").value =hasilcheck.konsul()
 
     //bmi
     let BMI = document.getElementById("tinggi").value/100 ;
     let BMI2 = document.getElementById("berat").value ;
     let hasil = (BMI2)/((BMI)*(BMI))
     document.getElementById('bmi').value=hasil
+    let status = '';
 
     //status berat badan
     if (hasil < 18.5) {
@@ -67,6 +53,12 @@ function hasil (){
     //hobi
     let hobitampil = document.getElementById("hobi1").value ;
     document.getElementById('tampilhobi').value = hobitampil;
+
+    //konsultasi
+    let hasilcheck = new check(document.getElementById("lahir").value, hasil);
+    document.getElementById("konsultasi").value =hasilcheck.konsul()
+    console.log(hasilcheck)
+
 }
 
 function hapus (){

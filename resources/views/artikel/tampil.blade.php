@@ -29,8 +29,8 @@
                 <td>{{ $item->judul}}</td>
                 <td><img src="{{ asset('storage/'.$item->foto) }}" height="100px" alt=""></td>
                 <td>{{ $item->isi}}</td>
-                <td>{{ $item->tanggal_artikel}}</td>
-                <td>{{ $item->nama}}</td>
+                <td>{{ $item->tanggal_artikel }}</td>
+                <td>{{ $item->kategori->nama }}</td>
                 <td>{{ $item->penulis}}</td>
                 <td>
                     <a href="{{ url ('artikel/'. $item->id. '/edit') }}" class="btn btn-danger btn-sm mb-3">Edit</a>

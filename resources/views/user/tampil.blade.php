@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-@if (Auth::user()->role == 'admin')
+
 <h1>Kategori</h1>
 
 <a href="{{ url('user/create') }}" class="btn btn-primary">Tambah Data</a>
@@ -41,8 +41,4 @@
     </table>
     </form>
 </div>
-@endif
-@if (Auth::user()->role == 'editor')
-<h1>Hanya Dapat Di akses Oleh Admin</h1>
-@endif
 @endsection
