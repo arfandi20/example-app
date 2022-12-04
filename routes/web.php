@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArtikelController;
+use App\Http\Controllers\BmiController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -35,7 +36,7 @@ Route::middleware(['auth', 'admin'])->group(function(){
     Route::resource('/user', UserController::class);
     Route::get('deleteuser/{id}', [UserController::class, 'destroy'])->name('deleteuser');
 });
-
+Route::resource('bmi', BmiController::class);
 
 Auth::routes();
 

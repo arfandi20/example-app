@@ -21,7 +21,12 @@
 
         <div class="form-group">
             <label for="">Role (admin/editor)</label>
-            <input type="text" class="form-control @error('role') is-invalid @enderror" name="role" value="{{$data->role}}">
+            {{-- <input type="text" class="form-control @error('role') is-invalid @enderror" name="role" value="{{$data->role}}"> --}}
+            <select class="form-select" aria-label="Default select example" name="role">
+                <option selected>Open this select menu</option>
+                <option value="admin" @selected($data->role=='admin')>admin</option>
+                <option value="editor" @selected($data->role=='editor')>editor</option>
+            </select>
         </div>
 
         <div class="form-group">
