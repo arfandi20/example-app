@@ -79,6 +79,10 @@ function status($bmi)
     }
 }
 
+interface Umur_{
+    public function lahir_($tahunLahir, $bmi);
+}
+
 class Umur
 {
     public function __construct($tahunLahir, $bmi)

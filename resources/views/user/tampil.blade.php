@@ -4,7 +4,7 @@
 
 <h1>Kategori</h1>
 
-<a href="{{ url('user/create') }}" class="btn btn-primary">Tambah Data</a>
+<a href="{{ url('user/create') }}" class="btn btn-primary mt-3">Tambah Data</a>
 
 <div class="mt-4">
     <form>
